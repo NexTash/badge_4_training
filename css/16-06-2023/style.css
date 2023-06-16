@@ -1,0 +1,73 @@
+span {
+  display: block;
+  text-align: center;
+  font-size: 50px;
+  color: rgb(95, 40, 95);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li:first-child {
+  animation: dance 2s infinite;
+}
+
+li {
+  font-size: 50px;
+  animation: heartbeat 1s infinite;
+}
+
+li:last-child {
+  animation: dance 3s infinite;
+}
+
+@keyframes dance {
+  0% {
+    color: aquamarine;
+    transform: translateX(0);
+  }
+  25% {
+    color: royalblue;
+
+    transform: translateX(-50px) rotate(10deg);
+  }
+  50% {
+    color: slateblue;
+
+    transform: translateX(0) rotate(-10deg);
+  }
+  75% {
+    color: chocolate;
+    transform: translateX(50px) rotate(10deg);
+  }
+  100% {
+    color: aquamarine;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+p {
+    font-size: 15px;
+}
+
+strong {
+    font-weight: bold;
+    font-size: 40px;
+    text-decoration: underline;
+}
