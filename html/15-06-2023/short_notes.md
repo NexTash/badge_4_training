@@ -1,4 +1,4 @@
-*HTML (Hyper-Text Markup Language) instructions known as tags
+HTML (Hyper-Text Markup Language) instructions known as tags
 
 
 Tags
