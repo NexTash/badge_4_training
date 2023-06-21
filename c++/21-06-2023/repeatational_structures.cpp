@@ -12,7 +12,7 @@ int main(){
    while (i<11) // condition
    {
     // body
-    cout<<num<<" x "<<i<<" = "<<num*i<<endl;    
+    cout<<num<<" x "<<i<<" = "<< num*i  <<endl;    
    
     // increment/decrement
     i = i +1;
