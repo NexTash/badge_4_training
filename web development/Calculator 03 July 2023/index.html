@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Calculator | Index</title>
+</head>
+<body>
+
+    <style>
+        section {
+            width: 40%;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            background-color: purple;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        input {
+            width: 96%;
+            padding: 12px;
+            font-size: 25px;
+
+            background-color: purple;
+            color: #fff;
+        }
+
+        .buttons-area {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 25%;
+            font-size: 25px;
+        
+            background-color: purple;
+            color: #fff;
+        }
+        button:nth-child(even){
+            background-color: #fff;
+            color: black
+        }
+    </style>
+    
+    <section>
+        <div class="wrapper">
+            <input type="text" id="inout">
+            <div class="buttons-area">
+                <button id="c">C</button>
+                <button id="/">/</button>
+                <button id="*">*</button>
+                <button id="backspace">backspace</button>
+                <button id="7">7</button>
+                <button id="8">8</button>
+                <button id="9">9</button>
+                <button id="-">-</button>
+                <button id="4">4</button>
+                <button id="5">5</button>
+                <button id="6">6</button>
+                <button id="+">+</button>
+                <button id="3">3</button>
+                <button id="2">2</button>
+                <button id="1">1</button>
+                <button id="." >.</button>
+                <button id="%">%</button>
+                <button id="0">0</button>
+                <button id="=" style="flex: 1">=</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let input = document.getElementById("inout")
+        let elements = document.querySelectorAll("button")
+        for (const el of elements) {
+            el.addEventListener("click", (e) => {
+                let element = e.target
+                if(element.id == "=") {
+                    input.value = eval(input.value)    
+                }else if(element.id == "c"){
+                    input.value = ""   
+                }else if(element.id == "backspace"){
+                    input.value = input.value.substring(0, input.value.length-1);
+                }else{
+                    input.value += element.id    
+                }
+
+            })
+        }
+    </script>
+</body>
+</html>
