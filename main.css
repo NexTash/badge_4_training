@@ -1,0 +1,10 @@
+a {
+    display: block;
+    width: max-content;
+    padding: 10px;
+    background-color: #eee;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
