@@ -9,56 +9,160 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <ul>
-      <li>
-        <h2>HTML</h2>
-
-        <ol>
-          <li>
-            <h3>15 June 2023</h3>
-
-            <ol>
-              <li><a href="./html/15-06-2023/basics.html">HTML Basics</a></li>
-            </ol>
-          </li>
-
-          <li>
-            <a href="./html/README.md">Docs</a>
-          </li>
-        </ol>
-      </li>
-
-      <li>
-        <h2>CSS</h2>
-
-        <ol>
-          <li>
-            <h3>16 June 2023</h3>
-
-            <ol>
-              <li><a href="./css/16-06-2023/basics.html">CSS Basics</a></li>
-            </ol>
-          </li>
-
-          <li>
-            <a href="./css/README.md">Docs</a>
-          </li>
-        </ol>
-      </li>
-
-      <li>
-        <h2>C++</h2>
-
-        <ul>
-          <li>
-            <h3>19 June 2023</h3>
-
-            <ol>
-              <li><a href="./c++/19-06-2023/hello_world.cpp">Hello World</a></li>
-            </ol>
-          </li>
-        </ul>
-      </li>
-    </ul>
+    <div id="docs"></div>
   </body>
+
+  <script src="./main.js"></script>
+  <script>
+    let links = [
+      {
+        name: "HTML",
+        type: "folder",
+
+        child: [
+          {
+            name: "15 June 2023",
+            type: "folder",
+
+            child: [
+              {
+                name: "HTML Basics",
+                type: "file",
+                href: "./html/15-06-2023/basics.html",
+              },
+            ],
+          },
+          {
+            name: "Docs",
+            type: "file",
+            href: "./html/README.md",
+          },
+        ],
+      },
+
+      {
+        name: "CSS",
+        type: "folder",
+
+        child: [
+          {
+            name: "16 June 2023",
+            type: "folder",
+
+            child: [
+              {
+                name: "CSS Basics",
+                type: "file",
+                href: "./css/16-06-2023/basics.html",
+              },
+            ],
+          },
+          {
+            name: "Docs",
+            type: "file",
+            href: "./css/README.md",
+          },
+        ],
+      },
+
+      {
+        name: "C++",
+        type: "folder",
+
+        child: [
+          {
+            name: "19 June 2023",
+            type: "folder",
+
+            child: [
+              {
+                name: "Hello World",
+                type: "file",
+                href: "./c++/19-06-2023/hello_world.cpp",
+              },
+            ],
+          },
+          {
+            name: "20 June 2023",
+            type: "folder",
+
+            child: [
+              {
+                name: "Conditional Statements",
+                type: "file",
+                href: "./c++/20-06-2023/conditional_statements.cpp",
+              },
+              {
+                name: "String To Math",
+                type: "file",
+                href: "./c++/20-06-2023/string_to_math.cpp",
+              },
+            ],
+          },
+          {
+            name: "21 June 2023",
+            type: "folder",
+
+            child: [
+              {
+                name: "If Condition FLowchart",
+                type: "file",
+                href: "./c++/21-06-2023/if-condition-flowchart.cpp",
+              },
+              {
+                name: "Repetational Structure",
+                type: "file",
+                href: "./c++/21-06-2023/repeatational_structures.cpp",
+              },
+            ],
+          },
+        ],
+      },
+
+      {
+        name: "Web Development",
+        type: "folder",
+
+        child: [
+          {
+            name: "03 July 2023",
+            type: "folder",
+
+            child: [
+              {
+                name: "Calculator",
+                type: "file",
+                href: "./web development/Calculator 03 July 2023/index.html",
+              },
+            ],
+          },
+          
+          {
+            name: "JS",
+            type: "folder",
+
+            child: [
+              {
+                name: "Calculator",
+                type: "file",
+                href: "./web development/Calculator 03 July 2023/index.html",
+              },
+              {
+                name: "Star Finder",
+                type: "file",
+                href: "./web development/js/star-finder.html",
+              },
+              {
+                name: "JS Basics",
+                type: "file",
+                href: "./web development/js/index.html",
+              },
+            ],
+          },
+        ],
+      },
+    ];
+
+    render_docs(links);
+  </script>
 </html>
