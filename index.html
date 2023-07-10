@@ -7,162 +7,54 @@
     <title>Site Map</title>
 
     <link rel="stylesheet" href="main.css" />
+
+    <style>
+      * {
+        font-size: 35px;
+      }
+    </style>
   </head>
   <body>
-    <div id="docs"></div>
+    <!-- opening tag -->
+    <input type="text" onchange="render_docs()" id="number">
+
+    <div id="docs">
+    </div>
+    <!-- closing tag -->
   </body>
 
   <script src="./main.js"></script>
   <script>
-    let links = [
-      {
-        name: "HTML",
-        type: "folder",
+    function render_docs() {
+      let number = document.getElementById("number").value
+      let docs = document.getElementById("docs")
+      
+      if (number) {
+        docs.innerHTML = `<h1>Table of ${number}</h1>`
+        number = parseFloat(number)
+     
+        append_html(number, 1)
+      }
+    }
 
-        child: [
-          {
-            name: "15 June 2023",
-            type: "folder",
+    function append_html(x, i) {
+      // selecting element
+      let docs = document.getElementById("docs");
+      
+      // creating new string
+      let html = docs.innerHTML
 
-            child: [
-              {
-                name: "HTML Basics",
-                type: "file",
-                href: "./html/15-06-2023/basics.html",
-              },
-            ],
-          },
-          {
-            name: "Docs",
-            type: "file",
-            href: "./html/README.md",
-          },
-        ],
-      },
+      html += `<h3>${x} X ${i} = ${x*i}</h3>`
+      
+      // changing element content
+      docs.innerHTML = html;
 
-      {
-        name: "CSS",
-        type: "folder",
+      i++;
+      if (i<11) {
+        append_html(x, i)
+      }
+    }
 
-        child: [
-          {
-            name: "16 June 2023",
-            type: "folder",
-
-            child: [
-              {
-                name: "CSS Basics",
-                type: "file",
-                href: "./css/16-06-2023/basics.html",
-              },
-            ],
-          },
-          {
-            name: "Docs",
-            type: "file",
-            href: "./css/README.md",
-          },
-        ],
-      },
-
-      {
-        name: "C++",
-        type: "folder",
-
-        child: [
-          {
-            name: "19 June 2023",
-            type: "folder",
-
-            child: [
-              {
-                name: "Hello World",
-                type: "file",
-                href: "./c++/19-06-2023/hello_world.cpp",
-              },
-            ],
-          },
-          {
-            name: "20 June 2023",
-            type: "folder",
-
-            child: [
-              {
-                name: "Conditional Statements",
-                type: "file",
-                href: "./c++/20-06-2023/conditional_statements.cpp",
-              },
-              {
-                name: "String To Math",
-                type: "file",
-                href: "./c++/20-06-2023/string_to_math.cpp",
-              },
-            ],
-          },
-          {
-            name: "21 June 2023",
-            type: "folder",
-
-            child: [
-              {
-                name: "If Condition FLowchart",
-                type: "file",
-                href: "./c++/21-06-2023/if-condition-flowchart.cpp",
-              },
-              {
-                name: "Repetational Structure",
-                type: "file",
-                href: "./c++/21-06-2023/repeatational_structures.cpp",
-              },
-            ],
-          },
-        ],
-      },
-
-      {
-        name: "Web Development",
-        type: "folder",
-
-        child: [
-          {
-            name: "03 July 2023",
-            type: "folder",
-
-            child: [
-              {
-                name: "Calculator",
-                type: "file",
-                href: "./web development/Calculator 03 July 2023/index.html",
-              },
-            ],
-          },
-          
-          {
-            name: "JS",
-            type: "folder",
-
-            child: [
-              {
-                name: "Calculator",
-                type: "file",
-                href: "./web development/Calculator 03 July 2023/index.html",
-              },
-              {
-                name: "Star Finder",
-                type: "file",
-                href: "./web development/js/star-finder.html",
-              },
-              {
-                name: "JS Basics",
-                type: "file",
-                href: "./web development/js/index.html",
-              },
-            ],
-          },
-        ],
-      },
-    ];
-
-    render_docs(links);
+    render_docs()
   </script>
 </html>
