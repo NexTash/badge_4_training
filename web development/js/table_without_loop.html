@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Map</title>
+
+    <link rel="stylesheet" href="../../main.css" />
+
+    <style>
+      * {
+        font-size: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- opening tag -->
+    <input type="text" onchange="render_docs()" id="number">
+
+    <div id="docs">
+    </div>
+    <!-- closing tag -->
+  </body>
+
+  <script>
+    function render_docs() {
+      let number = document.getElementById("number").value
+      let docs = document.getElementById("docs")
+      
+      if (number) {
+        docs.innerHTML = `<h1>Table of ${number}</h1>`
+        number = parseFloat(number)
+     
+        append_html(number, 1)
+      }
+    }
+
+    function append_html(x, i) {
+      // selecting element
+      let docs = document.getElementById("docs");
+      
+      // creating new string
+      let html = docs.innerHTML
+
+      html += `<h3>${x} X ${i} = ${x*i}</h3>`
+      
+      // changing element content
+      docs.innerHTML = html;
+
+      i++;
+      if (i<11) {
+        append_html(x, i)
+      }
+    }
+
+    render_docs()
+  </script>
+</html>
