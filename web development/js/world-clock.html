@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Clock</title>
+
+    <link rel="stylesheet" href="../../main.css" />
+    <link rel="stylesheet" href="./clock.css" />
+  </head>
+
+  <body>
+    <div class="clock" id="clock-wrapper">
+      
+    </div>
+  </body>
+
+  <script src="./clock.js"></script>
+  <script>
+    const clock_data = [
+        {
+          "country": "Pakistan",
+          "timezone": "Asia/Karachi",
+          "id": "time-pk"
+        },
+        {
+          "country": "London",
+          "timezone": "GMT",
+          "id": "time-london"
+        },
+        {
+          "country": "Africa",
+          "timezone": "Africa/Nairobi",
+          "id": "time-africa"
+        },
+        // Add more countries and time zones here
+        {
+          "country": "United States",
+          "timezone": "America/New_York",
+          "id": "time-us"
+        },
+        {
+          "country": "India",
+          "timezone": "Asia/Kolkata",
+          "id": "time-india"
+        },
+        {
+          "country": "China",
+          "timezone": "Asia/Shanghai",
+          "id": "time-china"
+        },
+        {
+          "country": "Japan",
+          "timezone": "Asia/Tokyo",
+          "id": "time-japan"
+        },
+        {
+          "country": "Australia",
+          "timezone": "Australia/Sydney",
+          "id": "time-australia"
+        },
+        {
+          "country": "Brazil",
+          "timezone": "America/Sao_Paulo",
+          "id": "time-brazil"
+        },
+        {
+          "country": "Germany",
+          "timezone": "Europe/Berlin",
+          "id": "time-germany"
+        },
+        {
+          "country": "France",
+          "timezone": "Europe/Paris",
+          "id": "time-france"
+        },
+        {
+          "country": "Italy",
+          "timezone": "Europe/Rome",
+          "id": "time-italy"
+        },
+        {
+          "country": "Canada",
+          "timezone": "America/Toronto",
+          "id": "time-canada"
+        },
+        {
+          "country": "South Africa",
+          "timezone": "Africa/Johannesburg",
+          "id": "time-sa"
+        },
+        {
+          "country": "Spain",
+          "timezone": "Europe/Madrid",
+          "id": "time-spain"
+        },
+        {
+          "country": "Russia",
+          "timezone": "Europe/Moscow",
+          "id": "time-russia"
+        },
+        {
+          "country": "Mexico",
+          "timezone": "America/Mexico_City",
+          "id": "time-mexico"
+        },
+        {
+          "country": "United Arab Emirates",
+          "timezone": "Asia/Dubai",
+          "id": "time-uae"
+        },
+        {
+          "country": "Argentina",
+          "timezone": "America/Argentina/Buenos_Aires",
+          "id": "time-argentina"
+        },
+        {
+          "country": "Saudi Arabia",
+          "timezone": "Asia/Riyadh",
+          "id": "time-saudi"
+        }
+      ];
+
+
+    function append_clocks() {
+      let html = ''
+      for (const el of clock_data) {
+        html += `
+          <div class="clock-locale">
+            <h5>${el.country}</h5>
+            <div id="${el.id}" class="time"></div>
+          </div>`
+      }
+
+      document.getElementById("clock-wrapper").innerHTML = html
+    }
+
+    append_clocks()
+
+    function updateTime() {
+      // Create a new Date object
+      const currentTime = new Date();
+
+      for (const el of clock_data) {
+        // Specify the target timezone using the timezone identifier
+        const targetTimezone = el.timezone;
+    
+        // Get the options for formatting the time
+        const options = {
+          timeZone: targetTimezone,
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric"
+        };
+
+        // Format the time according to the specified timezone
+        const formattedTime = currentTime.toLocaleString("en-US", options);
+
+        document.getElementById(el.id).innerHTML = formattedTime
+      }
+  }
+    
+    setInterval(updateTime, 1000);
+  </script>
+</html>
