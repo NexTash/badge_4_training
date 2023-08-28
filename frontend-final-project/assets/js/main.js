@@ -1,0 +1,1 @@
+function fomr_submitted(e){e.preventDefault();let t=document.getElementById("name").value;alert("Hy "+t)}

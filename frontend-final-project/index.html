@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extended HTML Tags</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="stylesheet" href="./assets/bs/bootstrap.css">
+  </head>
+  <body>
+    <!-- html is a markup language, that also indicate the skelton, 
+        it is very neccessry to use appropriate tag for each requirement for better readability and performance -->
+
+    <header>
+      <nav>
+        <a href="#">Home</a> | <a href="#">About</a> | <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <h1 class="text-primary">This is a &lt;h1&gt; tag</h1>
+    <h2 class="text-secondary">This is a &lt;h2&gt; tag</h2>
+    <h3 class="text-info">This is a &lt;h3&gt; tag</h3>
+    <h4 class="text-success">This is a &lt;h4&gt; tag</h4>
+    <h5 class="text-danger">This is a &lt;h5&gt; tag</h5>
+    <h6 class="text-default">This is a &lt;h6&gt; tag</h6>
+
+    <p>This is a &lt;p&gt; tag. It's used for paragraphs.</p>
+
+    <a href="#">This is an &lt;a&gt; tag. It's used for links.</a>
+    <br>
+    <img src="./assets/media/barbie.png" alt="An example image" />This is an &lt;img&gt; tag.
+
+    <ul>
+      <li>This is a &lt;ul&gt; tag.</li>
+      <li>It contains &lt;li&gt; items.</li>
+      <li>Each item is marked with a bullet point.</li>
+    </ul>
+
+    <ol>
+      <li>This is an &lt;ol&gt; tag.</li>
+      <li>It contains &lt;li&gt; items.</li>
+      <li>Each item is numbered.</li>
+    </ol>
+
+    <table class="table table-bordered">
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+      </tr>
+      <tr>
+        <td>Row 1, Cell 1</td>
+        <td>Row 1, Cell 2</td>
+      </tr>
+    </table>
+
+    <div class="d-flex justify-center">
+        <form onsubmit="return fomr_submitted(event)" class="w-25">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" class="form-control mb-2"/>
+            <input type="submit" value="Submit" class="btn btn-primary btn-sm w-100"/>
+        </form>
+    </div>
+
+    <blockquote>
+      This is a &lt;blockquote&gt; element. It's used for quoting text.
+    </blockquote>
+
+    <code>This is a &lt;code&gt; element. It's used for code snippets.</code>
+
+    <hr />
+    <p>This is a &lt;hr&gt; tag. It creates a horizontal rule.</p>
+
+    <pre>
+        This is a &lt;pre&gt; element.
+        It preserves whitespace and line breaks.
+    </pre>
+
+    <details>
+      <summary>Click to reveal</summary>
+      <p>
+        This is a &lt;details&gt; element. It's used for creating collapsible
+        content.
+      </p>
+    </details>
+
+    <mark>This is a &lt;mark&gt; element. It highlights text.</mark>
+
+    <del>This is a &lt;del&gt; element. It represents deleted text.</del>
+
+    <ins>This is an &lt;ins&gt; element. It represents inserted text.</ins>
+
+    <kbd>This is a &lt;kbd&gt; element. It represents keyboard input.</kbd>
+
+    <sup>This is a &lt;sup&gt; element. It represents superscript text.</sup>
+
+    <sub>This is a &lt;sub&gt; element. It represents subscript text.</sub>
+
+    <time datetime="2023-08-28"
+      >This is a &lt;time&gt; element. It represents time or dates.</time
+    >
+
+    <small>This is a &lt;small&gt; element. It represents smaller text.</small>
+
+    <strong>
+      This is a &lt;strong&gt; element. It represents strong importance.
+    </strong>
+
+    <em>This is an &lt;em&gt; element. It represents emphasized text.</em>
+
+    <abbr title="HyperText Markup Language">
+      This is an &lt;abbr&gt; element. It represents an abbreviation.
+    </abbr>
+
+    <progress value="70" max="100" class="p-5">50%</progress>
+
+    <meter value="75" min="0" max="100">75%</meter>
+
+    <output for="range">This is an &lt;output&gt; element.</output>
+
+    <samp>
+      This is a &lt;samp&gt; element. It represents sample output from a
+      computer program.
+    </samp>
+
+    <section>
+      <h2>Section Title</h2>
+      <p>
+        This is a &lt;section&gt; element. It represents a section of content.
+      </p>
+    </section>
+
+    <article>
+      <h2>Article Title</h2>
+      <p>
+        This is an &lt;article&gt; element. It represents a self-contained
+        composition.
+      </p>
+    </article>
+
+    <aside>
+      <p>
+        This is an &lt;aside&gt; element. It represents content tangentially
+        related to the main content.
+      </p>
+    </aside>
+
+    <footer>
+      <p>This is the &lt;footer&gt; of the page.</p>
+    </footer>
+
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
