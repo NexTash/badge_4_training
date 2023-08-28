@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idex | Food Panda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <input type="text" id="yourname" placeholder="Enter your name" >
+        <input type="text" id="partnername" placeholder="Enter partner's name" >
+    </div>
+</body>
+
+<script>
+    /* 
+        Assigning numerical values:
+            A=1, L=12, I=9, C=3, E=5
+            B=2, O=15, and so on.
+
+        Adding the values:
+            For Alice, the total value would be: 1 + 12 + 9 + 3 + 5 = 30
+            For Bob, the total value would be: 2 + 15 + 2 = 19
+
+        Scaling the result:
+            Let's say the scaling factor is 4. The final calculation could be (30 - 19) * 4 = 44.
+
+        Displaying the result:
+            The love calculator might show "44% compatibility" between Alice and Bob.
+    */
+
+    const name = document.getElementById("yourname")
+    const p_name = document.getElementById("partnername")
+    const alphabetObject = {
+        A: 1,
+        a: 10,
+        B: 2,
+        C: 3,
+        D: 4,
+        E: 5,
+        F: 6,
+        G: 7,
+        H: 8,
+        I: 9,
+        J: 10,
+        K: 11,
+        L: 12,
+        M: 13,
+        N: 14,
+        O: 15,
+        P: 16,
+        Q: 17,
+        R: 18,
+        S: 19,
+        T: 20,
+        U: 21,
+        V: 22,
+        W: 23,
+        X: 24,
+        Y: 25,
+        Z: 26,
+    };
+    
+    name.addEventListener("change", function () {
+        calc_compatibility()
+    })
+
+    p_name.addEventListener("change", function () {
+        calc_compatibility()
+    })
+
+    function calc_compatibility() {
+        let name_val = name.value
+        let p_name_val = p_name.value
+
+        let name_digits_count = 0
+        
+        for (const alphabit of name_val) {
+            alert(alphabetObject[alphabit])
+        }
+    }
+
+</script>
+</html>

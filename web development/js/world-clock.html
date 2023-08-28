@@ -125,6 +125,7 @@
 
     function append_clocks() {
       let html = ''
+
       for (const el of clock_data) {
         html += `
           <div class="clock-locale">
@@ -161,6 +162,6 @@
       }
   }
     
-    setInterval(updateTime, 1000);
+    // setInterval(updateTime, 1000);
   </script>
 </html>
